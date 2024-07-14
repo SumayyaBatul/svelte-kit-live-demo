@@ -68,7 +68,7 @@ export const actions = {
         SET name = ${name}, email = ${email}
         WHERE id = ${id};
       `;
-      return { success: true };
+      return { success: true, id };
     } catch (error) {
       console.error('Error updating record:', error);
       return { success: false, error: 'Failed to update record' };
@@ -87,7 +87,7 @@ export const actions = {
         DELETE FROM names
         WHERE id = ${id};
       `;
-      return { success: true };
+      return { success: true, id };
     } catch (error) {
       console.error('Error deleting record:', error);
       return { success: false, error: 'Failed to delete record' };
